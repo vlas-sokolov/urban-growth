@@ -28,7 +28,6 @@ def make_plotly_data(df):
                 lambda x: f'{x._name}: {x[0]} ({x[1]})', axis=1)
 
     urban_growth = [dict(
-            name = df.index.values,
             lon = df['Longitude'],
             lat = df['Latitude'],
             marker = dict(
@@ -63,7 +62,7 @@ def make_plotly_layout(geokwargs={}, **kwargs):
             projection = dict(type='orthographic'),
             showland = True,
             showcoastlines = True,
-            resolution = '110', # the only other available option is too slow!
+            resolution = 110, # the only other available option is too slow!
             showcountries = True,
             countrycolor = '#525252',
             showocean = True,
